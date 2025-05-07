@@ -37,8 +37,9 @@ const socket = ref(null);
 
 onMounted(() => {
     // socket.value = new WebSocket('ws://localhost:8080/ws');
-    socket.value = new WebSocket('ws://192.168.251.92:8080/ws');
+    // socket.value = new WebSocket('ws://192.168.251.92:8080/ws');
     // socket.value = new WebSocket('ws://0.0.0.0:8080/ws');
+    socket.value = new WebSocket('wss://go-ws-chat.onrender.com/ws');
 
     socket.value.onopen = () => {
         console.log('WebSocket 連線已開啟');
