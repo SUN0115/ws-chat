@@ -88,7 +88,118 @@ const sendMessage = () => {
 </script>
 
 
+
 <style scoped>
+.chat-room-container {
+    display: flex;
+    flex-direction: column;
+    /* 先移除固定的寬高，以便在手機上響應 */
+    /* height: 400px; */
+    /* width: 500px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    /* 上下留白，左右 auto 實現水平置中 */
+    max-width: 500px;
+    /* 設定最大寬度，防止在寬螢幕上過寬 */
+    width: 90%;
+    /* 在較小螢幕上佔據大部分寬度 */
+    box-sizing: border-box;
+    /* 包含 padding 和 border 在 width 內 */
+}
+
+/* 手機等較小螢幕的樣式 (預設就是 width: 90%) */
+@media (max-width: 600px) {
+    .chat-room-container {
+        /* 可以根據需要在小螢幕上調整其他樣式，例如 margin 等 */
+        margin: 10px auto;
+        width: 98%;
+    }
+}
+
+.header {
+    background-color: #eee;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.greeting {
+    font-weight: bold;
+}
+
+.online-users {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.chat-dialog {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    word-break: break-word;
+    align-self: flex-start;
+}
+
+.my-message {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.sender {
+    font-weight: bold;
+    margin-right: 5px;
+    color: #333;
+}
+
+.content {
+    color: #555;
+}
+
+.input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    color: #333;
+    background-color: #fff;
+}
+
+.input-area button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #0056b3;
+}
+</style>
+<!-- <style scoped>
 .chat-room-container {
     display: flex;
     flex-direction: column;
@@ -185,4 +296,4 @@ const sendMessage = () => {
 .input-area button:hover {
     background-color: #0056b3;
 }
-</style>
+</style> -->
